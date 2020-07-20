@@ -708,10 +708,10 @@ def get_args():
     parser.add_argument(
         "--url", required=True, help=(
             "URL for the target JSS instance (i.e. "
-            "'https://mycompany.jamfcloud.com')."))
+            "'https://mycompany.jamfcloud.com') (Required)"))
     parser.add_argument(
         "--username", required=True, help=(
-            "Username in JSS with API privileges."))
+            "Username in JSS with API privileges. (Required)"))
     parser.add_argument(
         "--password", help=(
             "Password for the 'username' account. If not provided, you will "
