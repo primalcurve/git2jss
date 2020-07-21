@@ -129,7 +129,7 @@ class JamfObject(object):
         """Initialization of a JamfObject object
 
         Nothing much happens at initialization. No IO is used in order to not
-        slow down the script, but because the ``get`` method requires an
+        slow down the script, and because the ``get`` method requires an
         ``aiohttp`` session and ``asyncio`` semaphore so that any missing XML
         may be gathered from the JSS.
 
@@ -283,24 +283,39 @@ class JamfObject(object):
                         "Update XML file: '%s' to stop seeing this message.",
                         self.folder.name, folder.name, str(self.xml_file))
             self.xml.find("name").text = self.folder.name
-        # Check the category
-        _category = self.xml.find("category")
-        if _category is None:
-            LOG.warning("%s: Category is missing from XML. Setting to None. "
-                        "Update XML file: '%s' to stop seeing this message.",
-                        self.name, str(self.xml_file))
-            ET.SubElement(self.xml, "category").text = "None"
-        elif _category.text != "None" and _category.text not in CATEGORIES:
-            LOG.warning("%s: Category '%s' not in the JSS. Setting to None. "
-                        "Update XML file: '%s' to stop seeing this message.",
-                        self.name, _category.text, str(self.xml_file))
-            _category.text = "None"
         if self.xml.find(self.data_xpath) is not None:
             self.xml.find(self.data_xpath).clear()
         if self.xml.find("id") is not None:
             self.xml.remove(self.xml.find("id"))
         if self.xml.find("filename") is not None:
             self.xml.remove(self.xml.find("filename"))
+
+    async def _check_category(self):
+        """Special method only for objects that use categories. Should be
+        called by that object's ``cleanup_xml`` method.
+
+        Args:
+            None
+
+        Returns:
+            None
+
+        """
+        # Check the category
+        _category = self.xml.find("category")
+        if _category is None:
+            LOG.warning(
+                "%s: Category is missing from XML. Setting to None. "
+                "Update XML file: '%s' to stop seeing this message.",
+                self.name, str(self.xml_file))
+            ET.SubElement(self.xml, "category").text = "None"
+        elif _category.text != "None" and _category.text not in CATEGORIES:
+            LOG.warning(
+                "%s: Category '%s' not in the JSS. Setting to None. "
+                "Update XML file: '%s' to stop seeing this message.",
+                self.name, _category.text, str(self.xml_file))
+            _category.text = "None"
+
 
     async def get_data(self):
         """Globs the ``folder`` looking for files with extensions defined in
@@ -438,6 +453,7 @@ class Script(JamfObject):
         """
         # Call JamfObject._cleanup_xml to reduce repeated code.
         await self._cleanup_xml()
+        await self._check_category()
         # This tag is unique to Scripts so is only included here.
         if self.xml.find("script_contents_encoded") is not None:
             self.xml.remove(self.xml.find("script_contents_encoded"))
@@ -544,9 +560,9 @@ def make_pretty_xml(element):
         str: A string containing the XML
 
     """
-    return minidom.parseString(ET.tostring(
-        element, encoding="unicode", method="xml")
-    ).toprettyxml(indent="    ")
+    return "\n".join([md_l for md_l in minidom.parseString(
+        ET.tostring(element, encoding="unicode", method="xml")
+        ).toprettyxml(indent="    ").splitlines() if md_l.strip()])
 
 
 async def get_existing_categories(session, semaphore):
