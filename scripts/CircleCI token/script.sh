@@ -6,6 +6,7 @@ if [[ ! -e /Users/$user/.snapsheet/ ]]; then
     mkdir /Users/$user/.snapsheet/
 elif [[ ! -d /Users/$user/.snapsheet/ ]]; then
     echo "/Users/$user/.snapsheet/ already exists but is not a directory" 1>&2
+    exit 1
 fi
 
 rm -rf /Users/$user/.snapsheet/.env
