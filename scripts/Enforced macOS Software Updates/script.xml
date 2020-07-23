@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<script>
+   <name>Enforced macOS Software Updates</name>
+   <category>Security &amp; Compliance</category>
+   <info/>
+   <notes>Created by Matt Grochocinski
+Script is designed to enforce users are running critical system updates. It allows for a configurable number of snoozes before the updates become mandatory.</notes>
+   <priority>After</priority>
+   <parameters>
+      <parameter4>jssAPIUsername</parameter4>
+      <parameter5>jssAPIPassword</parameter5>
+      <parameter6>jssAddress</parameter6>
+      <parameter7>Snooze Limit (INT)</parameter7>
+      <parameter8>Custom Trigger of Update Policy</parameter8>
+   </parameters>
+   <os_requirements/>
+   <script_contents/>
+</script>

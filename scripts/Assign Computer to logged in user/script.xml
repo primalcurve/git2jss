@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<script>
+   <name>Assign Computer to logged in user</name>
+   <category>Security &amp; Compliance</category>
+   <info/>
+   <notes/>
+   <priority>After</priority>
+   <parameters/>
+   <os_requirements/>
+   <script_contents/>
+</script>

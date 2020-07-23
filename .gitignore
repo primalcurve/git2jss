@@ -7,7 +7,5 @@ venv/*
 *.pyc
 
 # Example scripts and EAs
-extension_attributes/*
 !extension_attributes/Last User/
-scripts/*
 !scripts/Install Software Updates/

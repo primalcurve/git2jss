@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<script>
+   <name>Install Xcode CLI Tools</name>
+   <category>Computer Science</category>
+   <info/>
+   <notes/>
+   <priority>After</priority>
+   <parameters/>
+   <os_requirements/>
+   <script_contents/>
+</script>

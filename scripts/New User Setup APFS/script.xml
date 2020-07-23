@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<script>
+   <name>New User Setup APFS</name>
+   <category>Utility</category>
+   <info>Sometimes macOS sucks and doesn't assign a SecureToken to a user, which generally Very Bad™ when trying to enable FileVault. This script will assign a Secure Token to the currently logged in user.</info>
+   <notes/>
+   <priority>After</priority>
+   <parameters/>
+   <os_requirements/>
+   <script_contents/>
+</script>

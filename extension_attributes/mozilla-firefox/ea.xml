@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<computer_extension_attribute>
+   <name>mozilla-firefox</name>
+   <enabled>true</enabled>
+   <description>Extension Attribute provided by JAMF Nation patch service</description>
+   <data_type>String</data_type>
+   <input_type>
+      <type>script</type>
+      <platform>Mac</platform>
+      <script/>
+   </input_type>
+   <inventory_display>General</inventory_display>
+   <recon_display>Extension Attributes</recon_display>
+</computer_extension_attribute>

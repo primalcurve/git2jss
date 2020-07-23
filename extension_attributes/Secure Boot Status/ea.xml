@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<computer_extension_attribute>
+   <name>Secure Boot Status</name>
+   <enabled>true</enabled>
+   <description>This EA pulls the Secure Boot status of the device for MacBooks with the Apple T2 chip. All devices without the T2 chip will come back &quot;Secure Boot Not Present.&quot;</description>
+   <data_type>String</data_type>
+   <input_type>
+      <type>script</type>
+      <platform>Mac</platform>
+      <script/>
+   </input_type>
+   <inventory_display>Hardware</inventory_display>
+   <recon_display>Extension Attributes</recon_display>
+</computer_extension_attribute>

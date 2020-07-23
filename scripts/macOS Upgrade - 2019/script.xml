@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<script>
+   <name>macOS Upgrade - 2019</name>
+   <category>Security &amp; Compliance</category>
+   <info/>
+   <notes/>
+   <priority>After</priority>
+   <parameters>
+      <parameter4>OS Installer Path (ex /Apps/Install.app)</parameter4>
+      <parameter5>Version of Installer (ex 10.14.5)</parameter5>
+      <parameter6>Download Policy Trigger</parameter6>
+      <parameter7>MD5 Checksum of InstallESD</parameter7>
+      <parameter8>eraseInstall (0-No, 1-Yes)</parameter8>
+      <parameter9>User Dialog (0-fullscreen, 1-util)</parameter9>
+   </parameters>
+   <os_requirements/>
+   <script_contents/>
+</script>

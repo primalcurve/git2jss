@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<script>
+   <name>Upgrade macOS - Major Version</name>
+   <category>Security &amp; Compliance</category>
+   <info/>
+   <notes/>
+   <priority>After</priority>
+   <parameters>
+      <parameter4>Required free space (in GB)</parameter4>
+      <parameter5>App name (e.g. macOS Mojave)</parameter5>
+      <parameter6>Time estimate (in minutes)</parameter6>
+      <parameter7>Trigger name of a policy that should be</parameter7>
+      <parameter8>Minimum OS version required to upgrade f</parameter8>
+      <parameter9>Check if iCloud Drive is enabled. (Type</parameter9>
+      <parameter10>Full macOS installer app path. Enter the</parameter10>
+      <parameter11>Minimum macOS installer app version (e.g</parameter11>
+   </parameters>
+   <os_requirements/>
+   <script_contents/>
+</script>

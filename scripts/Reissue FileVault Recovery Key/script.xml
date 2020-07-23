@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<script>
+   <name>Reissue FileVault Recovery Key</name>
+   <category>Testing</category>
+   <info/>
+   <notes>This script is designed to reissue a filevault key in situations where the current key in escrow is invalid and needs to be remediated.</notes>
+   <priority>After</priority>
+   <parameters/>
+   <os_requirements/>
+   <script_contents/>
+</script>

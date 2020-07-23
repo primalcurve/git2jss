@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<script>
+   <name>Initial Configuration LaunchDaemon Removal</name>
+   <category>! DEP Enrollment - DO NOT TOUCH</category>
+   <info/>
+   <notes/>
+   <priority>After</priority>
+   <parameters/>
+   <os_requirements/>
+   <script_contents/>
+</script>

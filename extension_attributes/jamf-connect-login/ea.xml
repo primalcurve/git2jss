@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<computer_extension_attribute>
+   <name>jamf-connect-login</name>
+   <enabled>true</enabled>
+   <description>A script to collect the version of Jamf Connect Login is currently installed. If JCL is not installed &quot;Not Installed&quot; will return back.</description>
+   <data_type>String</data_type>
+   <input_type>
+      <type>script</type>
+      <platform>Mac</platform>
+      <script/>
+   </input_type>
+   <inventory_display>Extension Attributes</inventory_display>
+   <recon_display>Extension Attributes</recon_display>
+</computer_extension_attribute>
